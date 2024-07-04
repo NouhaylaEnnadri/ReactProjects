@@ -1,4 +1,7 @@
 import card from "./Card.jsx";
-import Portfolio from "./Portfolio.jsx";
+import DarkLight from "./DarkLight.jsx";
 import Details from "./Details.jsx";
-export { Details, card, Portfolio };
+import Menu from "./Menu.jsx";
+import Nav from "./Nav.jsx";
+
+export { Details,Nav, DarkLight, Menu, card };

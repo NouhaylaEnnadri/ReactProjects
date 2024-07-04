@@ -6,8 +6,10 @@ import CarasolSqueltee from "./CarasolSqueltee.jsx";
 import Search from "./Search.jsx";
 import Category from "./Category.jsx";
 import Nav from "./Nav.jsx";
+import Alert from "./Alert.jsx";
 
 export {
+  Alert,
   Nav,
   Category,
   Search,

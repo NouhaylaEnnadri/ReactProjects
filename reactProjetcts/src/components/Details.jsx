@@ -1,28 +1,46 @@
 import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { project1, project1Light } from "../assets";
 
-const ProjectBlogPage = () => {
+const Details = ({
+  id,
+  projectName,
+  LightImage,
+  DarkImage,
+  link,
+  tags,
+  overview,
+  features,
+  techDetails,
+  futurePlans,
+  challenges,
+  lessonsLearned,
+  collaborators,
+  githubLink,
+  liveSiteLink,
+  additionalImages,
+  title,
+}) => {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       {/* Title */}
-      <h1 className="text-4xl font-bold mb-6 text-primary">
-        Project 01 : Noyl's Do :
-      </h1>
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold mb-4 text-primary">{projectName}</h1>
+        <p className="text-lg text-gray-600">
+          Project ID: <strong>{id}</strong>
+        </p>
+      </div>
 
-    
-
-      {/* Images with Hover Links */}
+      {/* Main Images with Hover Links */}
       <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="relative group">
           <img
-            src={project1}
-            alt="Noy's Do Screenshot 1"
+            src={LightImage}
+            alt={`${projectName} Light Mode`}
             className="rounded-lg shadow-md w-full h-auto"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <a
-              href={project1Light}
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-lg flex items-center"
@@ -33,13 +51,13 @@ const ProjectBlogPage = () => {
         </div>
         <div className="relative group">
           <img
-            src={project1Light}
-            alt="Noy's Do Screenshot 2"
+            src={DarkImage}
+            alt={`${projectName} Dark Mode`}
             className="rounded-lg shadow-md w-full h-auto"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <a
-              href="https://noyldo.netlify.app/"
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-lg flex items-center"
@@ -50,73 +68,136 @@ const ProjectBlogPage = () => {
         </div>
       </div>
 
-  {/* Tags */}
-  <div className="flex mb-8 space-x-3">
-        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-          React
-        </span>
-        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-          Firebase
-        </span>
-        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-          Productivity
-        </span>
-        <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-          Task Management
-        </span>
+      {/* Tags */}
+      <div className="flex mb-8 space-x-3 flex-wrap justify-center">
+        {tags.map((tag, index) => (
+          <span
+            className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium"
+            key={index}
+          >
+            {tag}
+          </span>
+        ))}
       </div>
+
       {/* Project Aspects */}
-      <div className="mb-8">
+      <div className="mb-12">
         <h2 className="text-2xl font-bold mb-4 text-secondary">Overview</h2>
-        <p className="text-lg mb-6">
-          Noy's Do is a powerful and user-friendly todo app designed to help you
-          manage your tasks efficiently. Built with React and Firebase, it
-          provides real-time synchronization and a seamless user experience.
-        </p>
+        <p className="text-lg mb-6">{overview}</p>
 
         <h2 className="text-2xl font-bold mb-4 text-secondary">Features</h2>
-        <p className="text-lg mb-6">
-          <ul className="list-disc list-inside">
-            <li>Intuitive user interface for easy task management</li>
-            <li>Real-time data synchronization with Firebase</li>
-            <li>Task categorization, deadlines, and prioritization</li>
-            <li>Reminders to keep you on track</li>
-            <li>Cross-device compatibility</li>
-          </ul>
-        </p>
+        <ul className="list-disc list-inside mb-6">
+          {features.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
 
         <h2 className="text-2xl font-bold mb-4 text-secondary">
           Technical Details
         </h2>
-        <p className="text-lg mb-6">
-          The app is built using React for the frontend and Firebase for the
-          backend. React's component-based architecture allows for a modular and
-          maintainable codebase, while Firebase provides robust real-time data
-          handling capabilities.
-        </p>
+        <p className="text-lg mb-6">{techDetails}</p>
+
+        {/* Future Plans */}
+        {futurePlans && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-secondary">
+              Future Plans
+            </h2>
+            <p className="text-lg mb-6">{futurePlans}</p>
+          </div>
+        )}
+
+        {/* Challenges */}
+        {challenges && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-secondary">
+              Challenges
+            </h2>
+            <p className="text-lg mb-6">{challenges}</p>
+          </div>
+        )}
+
+        {/* Lessons Learned */}
+        {lessonsLearned && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-secondary">
+              Lessons Learned
+            </h2>
+            <p className="text-lg mb-6">{lessonsLearned}</p>
+          </div>
+        )}
+
+        {/* Collaborators */}
+        {collaborators && collaborators.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-secondary">
+              Collaborators
+            </h2>
+            <ul className="list-disc list-inside mb-6">
+              {collaborators.map((collaborator, index) => (
+                <li key={index}>{collaborator}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
 
+      {/* Additional Images */}
+      {additionalImages && additionalImages.length > 0 && (
+        <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {additionalImages.map((image, index) => (
+            <div key={index} className="relative group">
+              <h1
+                className="text-2xl text-secondary 
+              
+              
+              
+              "
+              >
+                {title}
+              </h1>
+              <img
+                src={image}
+                alt={`${projectName} Additional Screenshot ${index + 1}`}
+                className="rounded-lg shadow-md w-full h-auto"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white text-lg flex items-center"
+                ></a>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
       {/* Links */}
-      <div className="flex justify-between mb-8">
-        <a
-          href="https://github.com/yourusername/noys-do"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-blue-500 hover:underline text-lg"
-        >
-          <FiGithub className="mr-2" /> GitHub Repository
-        </a>
-        <a
-          href="https://noyldo.netlify.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center text-blue-500 hover:underline text-lg"
-        >
-          <FiExternalLink className="mr-2" /> Live Website
-        </a>
+      <div className="flex justify-center space-x-6">
+        {githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-500 hover:underline text-lg"
+          >
+            <FiGithub className="mr-2" /> GitHub Repository
+          </a>
+        )}
+        {liveSiteLink && (
+          <a
+            href={liveSiteLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-blue-500 hover:underline text-lg"
+          >
+            <FiExternalLink className="mr-2" /> Live Website
+          </a>
+        )}
       </div>
     </div>
   );
 };
 
-export default ProjectBlogPage;
+export default Details;

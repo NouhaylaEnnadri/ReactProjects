@@ -1,40 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import { GiFullPizza, GiHamburger, GiChopsticks } from "react-icons/gi";
 import { MdRamenDining } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+
 const Category = () => {
   return (
     <div className="flex flex-wrap items-center justify-center sm:justify-start cursor-pointer space-x-4">
-      {/*italien*/}
-      <NavLink to={"cuisine/Italian"}>
-        <div className="mt-2 flex items-center space-x-2 bg-accent bg-opacity-20 rounded-full p-2">
-          <GiFullPizza className="text-2xl text-primary" />
-          <p className="text-sm">Italien</p>
-        </div>
+      {/* Italian */}
+      <NavLink
+        to="/cuisine/Italian"
+        className={({ isActive }) =>
+          `mt-2 flex items-center space-x-2 bg-opacity-20 rounded-full p-2 ${
+            isActive ? "bg-primary " : "bg-accent "
+          }`
+        }
+      >
+        <GiFullPizza className="text-2xl" />
+        <p className="text-sm">Italian</p>
       </NavLink>
 
-      {/*usa*/}
-      <NavLink to={"cuisine/American"}>
-        <div className=" mt-2 flex items-center space-x-2 bg-accent bg-opacity-20 rounded-full p-2">
-          <GiHamburger className="text-2xl text-primary" />
-          <p className="text-sm">Americain</p>
-        </div>
+      {/* American */}
+      <NavLink
+        to="/cuisine/American"
+        className={({ isActive }) =>
+          `mt-2 flex items-center space-x-2 bg-opacity-20 rounded-full p-2 ${
+            isActive ? "bg-primary " : "bg-accent "
+          }`
+        }
+      >
+        <GiHamburger className="text-2xl" />
+        <p className="text-sm">American</p>
       </NavLink>
 
-      {/*thai*/}
-      <NavLink to={"cuisine/Thai"}>
-        <div className=" mt-2 flex items-center space-x-2 bg-accent bg-opacity-20 rounded-full p-2">
-          <MdRamenDining className="text-2xl text-primary" />
-          <p className="text-sm">Thai</p>
-        </div>
+      {/* Thai */}
+      <NavLink
+        to="/cuisine/Thai"
+        className={({ isActive }) =>
+          `mt-2 flex items-center space-x-2 bg-opacity-20 rounded-full p-2 ${
+            isActive ? "bg-primary " : "bg-accent "
+          }`
+        }
+      >
+        <MdRamenDining className="text-2xl" />
+        <p className="text-sm">Thai</p>
       </NavLink>
 
-      {/*jap*/}
-      <NavLink to={"cuisine/Japanese"}>
-        <div className=" mt-2 flex items-center space-x-2 bg-accent bg-opacity-20 rounded-full p-2">
-          <GiChopsticks className="text-2xl text-primary" />
-          <p className="text-sm">Jap</p>
-        </div>
+      {/* Japanese */}
+      <NavLink
+        to="/cuisine/Japanese"
+        className={({ isActive }) =>
+          `mt-2 flex items-center space-x-2 bg-opacity-20 rounded-full p-2 ${
+            isActive ? "bg-primary " : "bg-accent "
+          }`
+        }
+      >
+        <GiChopsticks className="text-2xl" />
+        <p className="text-sm">Japanese</p>
       </NavLink>
     </div>
   );

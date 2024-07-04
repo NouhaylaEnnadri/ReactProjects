@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import Card from "./Card";
-import { project1 } from "../assets";
-
+import Card from "../components/Card";
+import { noylisDelicous_Dark, project1 } from "../assets";
+import { projectsData } from "../Data";
+import { useNavigate } from "react-router";
 const Portfolio = () => {
   const [activeTab, setActiveTab] = useState(1); // State to track active tab, defaulting to the first tab
 
+  const navigate = useNavigate();
   const handleTabClick = (tabIndex) => {
-    setActiveTab(tabIndex); // Update active tab state when a tab is clicked
+    setActiveTab(tabIndex);
   };
 
   return (
@@ -39,8 +41,16 @@ const Portfolio = () => {
           role="tabpanel"
           className="tab-content bg-base-100 border-primary rounded-box p-12"
         >
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 justify-center ">
-            <Card img={project1} />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 justify-center">
+            {projectsData.map((project) => (
+              <Card
+                key={project.id}
+                img={project.DarkImage}
+                projectName={project.projectName}
+                tags={project.tags}
+                id={project.id}
+              />
+            ))}
           </div>
         </div>
       </div>

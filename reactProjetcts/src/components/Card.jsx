@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({ img }) => {
+const Card = ({ img, projectName, tags, id }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -14,22 +15,18 @@ const Card = ({ img }) => {
           >
             <img
               src={img}
-              alt="Project 1"
+              alt={projectName}
               className="object-cover w-full h-full"
             />
             {isHovered && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 transition duration-300">
-                <button className="bg-primary text-white px-4 py-2 rounded-md z-10">
-                  More Details
-                </button>
-                <div className="absolute bottom-0 left-0 p-4 text-xs text-gray-500">
-                  <span className="inline-block bg-gray-200 px-2 py-1 rounded-md mr-1">
-                    ReactJs
-                  </span>
-                  <span className="inline-block bg-gray-200 px-2 py-1 rounded-md mr-1">
-                    Tailwind
-                  </span>
-                </div>
+                <Link to={`/details/${id}`}>
+                  <button className="bg-primary text-white px-4 py-2 rounded-md z-10">
+                    More Details
+                  </button>
+                </Link>
+
+               
               </div>
             )}
           </div>
