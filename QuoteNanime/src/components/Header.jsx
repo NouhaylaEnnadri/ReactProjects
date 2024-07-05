@@ -1,14 +1,20 @@
 import React from "react";
 import { QuoteNanime_logo } from "../assets";
 import DarkLight from "./DarkLight";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="pt-2">
-      <div className="navbar pl-6 pr-6 pt-2  ">
+      <div className="navbar pl-6 pr-6 pt-2">
         <div className="navbar-start">
+          {/* Dropdown Menu for Mobile View */}
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -29,51 +35,42 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <Link to="/AboutUs">About us</Link>
               </li>
               <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
+                <Link to="/AnimeQuiz">Anime quiz</Link>
               </li>
               <li>
-                <a>Item 3</a>
+                <Link to="/ContactUs">Contact us</Link>
               </li>
             </ul>
           </div>
-          <img src={QuoteNanime_logo} alt="logo" className="w-36 h-auto " />
+          {/* Logo Link */}
+          <Link to="/">
+            <img
+              src={QuoteNanime_logo}
+              alt="logo"
+              className="w-36 h-auto"
+            />
+          </Link>
         </div>
+        {/* Navigation Links for Desktop View */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <Link to="/AboutUs">About us</Link>
             </li>
             <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <Link to="/AnimeQuiz">Anime quiz</Link>
             </li>
             <li>
-              <a>Item 3</a>
+              <Link to="/ContactUs">Contact us</Link>
             </li>
           </ul>
         </div>
+        {/* Dark/Light Mode Toggle */}
         <div className="navbar-end">
-          <DarkLight />{" "}
+          <DarkLight />
         </div>
       </div>
     </div>

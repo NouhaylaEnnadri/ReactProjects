@@ -6,7 +6,6 @@ export default {
     fontFamily: {
       Kanit: ["Kanit", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
-
     },
   },
   daisyui: {

@@ -1,7 +1,10 @@
 import React from "react";
+import { Quote ,Media} from "../components";
 
 const Quote_Page = () => {
-  return <div></div>;
+  return(
+    <Media/>
+  );
 };
 
 export default Quote_Page;

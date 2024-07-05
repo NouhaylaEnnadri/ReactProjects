@@ -1,15 +1,23 @@
 import React from "react";
 import Main_Page from "./Main_Page";
 import { Footer, Header } from "../components";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Quote } from "lucide-react";
+import Quote_Page from "./Quote_Page";
 
 const Page = () => {
   return (
-    <div>
-      <Header />
+    <BrowserRouter>
+      <>
+        <Header />
 
-      <Main_Page />
-      <Footer />
-    </div>
+        <Routes>
+          <Route path="/" element={<Main_Page />} />
+          <Route path="/Quote" element={<Quote_Page />} />
+        </Routes>
+        <Footer />
+      </>
+    </BrowserRouter>
   );
 };
 
