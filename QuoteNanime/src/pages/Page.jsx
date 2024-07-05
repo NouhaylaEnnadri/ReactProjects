@@ -2,7 +2,6 @@ import React from "react";
 import Main_Page from "./Main_Page";
 import { Footer, Header } from "../components";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Quote } from "lucide-react";
 import Quote_Page from "./Quote_Page";
 
 const Page = () => {

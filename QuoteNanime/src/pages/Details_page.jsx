@@ -1,4 +1,3 @@
-import { Quote } from "lucide-react";
 import React from "react";
 
 const Details_page = () => {

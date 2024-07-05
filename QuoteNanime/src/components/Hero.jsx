@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Input from "./Input";
 
 const Hero = () => {
-  const [Additional, setAdditional] = useState(true);
+  const [Additional, setAdditional] = useState(false);
   const setOptional = () => {
     setAdditional((prev) => !prev);
     console.log(Additional);
@@ -57,7 +57,7 @@ const Hero = () => {
           Generate Quote
         </button>
       </Link>
-     
+
       {/* Totoro Image */}
       <div className="mb-8">
         <img
