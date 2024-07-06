@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MediaCard = () => {
   const movieCards = [
@@ -39,15 +40,19 @@ const MediaCard = () => {
             className="absolute inset-0 w-full h-full bg-cover bg-center"
             style={{ backgroundImage: `url(${movie.imageUrl})` }}
           ></div>
-          <div className="relative z-10 p-4 flex flex-col justify-end h-full bg-gradient-to-t from-gray-900 to-transparent">
-            <h3 className="text-white text-lg font-semibold">{movie.title}</h3>
-            <a
-              href="#_"
-              className="mt-2 inline-block px-4 py-2 text-sm font-bold text-black bg-secondary rounded-lg transition-transform duration-300 hover:scale-110"
-            >
-              Read More
-            </a>
-          </div>
+          <Link to="/MoreInfo">
+            <div className="relative z-10 p-4 flex flex-col justify-end h-full bg-gradient-to-t from-gray-900 to-transparent">
+              <h3 className="text-white text-lg font-semibold">
+                {movie.title}
+              </h3>
+              <a
+                href="#_"
+                className="mt-2 inline-block px-4 py-2 text-sm font-bold text-black bg-secondary rounded-lg transition-transform duration-300 hover:scale-110"
+              >
+                Read More
+              </a>
+            </div>
+          </Link>
         </div>
       ))}
     </div>

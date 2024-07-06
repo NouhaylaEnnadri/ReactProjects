@@ -1,8 +1,12 @@
 import React from "react";
 import { QuoteNanime_banner, QuoteNanime_logo, test } from "../assets"; // Ensure this path is correct
 import { Buttons, MediaCard } from "../components";
+import { Link, useLocation } from "react-router-dom";
 
 const Media = () => {
+  const location = useLocation();
+  const { quote, animeTitle } = location.state || {}; // Destructure quote and ani
+  console.log("quote: " + quote + " and aniTitle: " + animeTitle);
   return (
     <div className="relative w-full max-w-[800px] mx-auto my-20 px-4">
       {/* Media Card */}
@@ -16,10 +20,7 @@ const Media = () => {
           {/* Text Section */}
           <div className="p-6 flex flex-col justify-center">
             <blockquote className="relative border-l-4 pl-4 sm:pl-6 border-secondary text-center">
-              <p className="font-montserrat text-lg ">
-                I just wanted to say that I'm very happy with my purchase so
-                far. The documentation is outstanding - clear and detailed. I
-              </p>
+              <p className="font-montserrat text-lg ">{quote}</p>
             </blockquote>
           </div>
         </div>
@@ -27,7 +28,9 @@ const Media = () => {
       {/* Buttons */}
       <div className="flex justify-center mt-4 p-6 space-x-4">
         {/* New filter button  */}
+        <Link to="/" >
         <Buttons text="New Filter" />
+        </Link>
         {/* Randomize Button */}
         <Buttons text="Randomize" />
       </div>

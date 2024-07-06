@@ -7,8 +7,10 @@ import Media from "./Media";
 import MoreInfo from "./MoreInfo";
 import Buttons from "./Buttons";
 import MediaCard from "./MediaCard";
+import Alert from "./Alert";
 
 export {
+  Alert,
   MediaCard,
   Buttons,
   Input,

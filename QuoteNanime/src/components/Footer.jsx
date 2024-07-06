@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div class>
-    
-      <footer className="footer bg-secondary justify-between rounded-lg text-neutral-content p-6">
+      <footer className="footer bg-secondary bg-opacity-25 justify-between rounded-lg text-neutral-content p-6">
         <aside>
-        <Link to="/Quote">
-        <img src={QuoteNanime_logo} alt="logo" className="w-36 h-auto " />
-      </Link>        </aside>
+          <Link to="/Quote">
+            <img src={QuoteNanime_logo} alt="logo" className="w-36 h-auto " />
+          </Link>{" "}
+        </aside>
         <nav>
           <h6 className="footer-title"></h6>
           <div className="grid grid-flow-col gap-4">

@@ -6,7 +6,7 @@ const InputTodo = ({ placeholder, sendData }) => {
   const onKeyDown = (event) => {
     if (event.key === 'Enter') {
       sendData(inputValue);
-      setInputValue('');  // Clear the input after sending data
+      setInputValue(''); 
     }
   };
 
