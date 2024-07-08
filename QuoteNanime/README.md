@@ -1,29 +1,24 @@
 <br/>
 <div align="center">
 <a href="/src/assets/QuoteNanime_logo.png">
-<img src="/src/assets/QuoteNanime_logo.png" alt="Logo" width="80" height="80">
+<img src="https://github.com/NouhaylaEnnadri/ReactProjects/blob/main/QuoteNanime/src/assets/QuoteNanime_logo.png" alt="Logo" width="80" height="80">
 </a>
 <h3 align="center">QuoteNanime</h3>
 <p align="center">
 A web application to help you pick your next anime binge by generating random anime quotes and providing detailed information about the anime, characters, and director!
 <br/>
 <br/>
-<a href="https://github.com/nouhayla/quotenanime"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
 <img src="https://github.com/NouhaylaEnnadri/ReactProjects/blob/main/QuoteNanime/src/assets/QuoteNanime_banner.png" alt="banner" >
 
 <a href="https://noylread.netlify.app/">View Live Version</a>  
-<a href="https://link-to-demo-video">Watch Video Demo</a>
-<a href="https://github.com/nouhayla/quotenanime/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-<a href="https://github.com/nouhayla/quotenanime/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
 
 </p>
 </div>
 
 ## **About The Project**
 
-![Product Screenshot](https://source.unsplash.com/random/1920x1080)
 
 QuoteNanime is a web application designed to help you pick your next anime binge. Enter the title of an anime, and the app will generate a random quote from that anime. Additionally, you can access detailed information about the anime, its characters, and the director to help you decide if it’s worth watching.
 
