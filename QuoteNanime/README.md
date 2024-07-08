@@ -1,7 +1,7 @@
 <br/>
 <div align="center">
-<a href="https://github.com/nouhayla/quotenanime">
-<img src="./" alt="Logo" width="80" height="80">
+<a href="/src/assets/QuoteNanime_logo.png">
+<img src="/src/assets/QuoteNanime_logo.png" alt="Logo" width="80" height="80">
 </a>
 <h3 align="center">QuoteNanime</h3>
 <p align="center">
@@ -11,10 +11,13 @@ A web application to help you pick your next anime binge by generating random an
 <a href="https://github.com/nouhayla/quotenanime"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
+<img src="/src/assets/QuoteNanime_banner.png" alt="banner" >
+
 <a href="https://noylread.netlify.app/">View Live Version</a>  
 <a href="https://link-to-demo-video">Watch Video Demo</a>
 <a href="https://github.com/nouhayla/quotenanime/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
 <a href="https://github.com/nouhayla/quotenanime/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+
 </p>
 </div>
 
@@ -38,8 +41,3 @@ This section lists major frameworks, libraries, and APIs used in this project:
 - [Tailwind CSS](https://tailwindcss.com) and [DaisyUI](https://daisyui.com) for styling
 - [Waifu API](https://docs.waifu.it/faq) for generating anime quotes
 - [Jikan API](https://docs.api.jikan.moe/#tag/anime/operation/getAnimePictures) for fetching anime images and detailed information
-
-## **Getting Started**
-
-Follow these steps to set up the project locally:
-
