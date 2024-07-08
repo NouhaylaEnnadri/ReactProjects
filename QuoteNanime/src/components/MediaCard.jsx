@@ -1,60 +1,77 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { getProducer } from "../services/api/Jikan API/fetchProducer";
+import { getCharacterByName } from "../services/api/Jikan API/fetchCharacter";
+import { getImage } from "../services/api/Jikan API/fetchAnimeImage";
+import Card from "./Card";
 
-const MediaCard = () => {
-  const movieCards = [
-    {
-      id: 1,
-      title: "Inception",
-      imageUrl:
-        "https://image.tmdb.org/t/p/original/50rRT2Kf8NQ1zeD2y5KTQDEp8FX.jpg",
-      description:
-        "A thief who steals corporate secrets through the use of dream-sharing technology.",
-    },
-    {
-      id: 2,
-      title: "Interstellar",
-      imageUrl:
-        "https://image.tmdb.org/t/p/w500/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg",
-      description:
-        "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-    },
-    {
-      id: 3,
-      title: "The Dark Knight",
-      imageUrl:
-        "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-      description:
-        "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
-    },
-  ];
+const MediaCard = ({ producer_id, animeAuthor, animeTitle }) => {
+  const [producerName, setProducerName] = useState(null);
+  const [producerImage, setProducerImage] = useState(null); // Default image
+  const [producerPosition, setProducerPosition] = useState(null);
+  const [character, setCharacter] = useState(null);
+  const [animeImage, setAnimeImage] = useState(null); // Default image
+
+  // Fetch Producer Data
+  const fetchProducer = useCallback(async () => {
+    try {
+      if (producer_id) {
+        const { name, imageUrl, position } = await getProducer(producer_id);
+        setProducerPosition(position);
+        setProducerImage(imageUrl); // Set default image if none is provided
+        setProducerName(name);
+      }
+    } catch (err) {
+      console.error("Error fetching producer:", err.message);
+    }
+  }, [producer_id]);
+
+  // Fetch Character Data
+  const fetchCharacter = useCallback(async () => {
+    try {
+      if (producer_id && animeAuthor) {
+        console.log(animeAuthor);
+        const character = await getCharacterByName(producer_id, animeAuthor);
+        console.log(character);
+        setCharacter(character);
+      }
+    } catch (err) {
+      console.error("Error fetching character:", err.message);
+    }
+  }, [producer_id, animeAuthor]);
+
+  // Fetch Anime Image
+  const fetchAnimeImage = useCallback(async () => {
+    try {
+      if (animeTitle) {
+        const { animeImage } = await getImage(animeTitle);
+        setAnimeImage(animeImage); // Set default image if none is provided
+      }
+    } catch (err) {
+      console.error("Error fetching anime image:", err.message);
+    }
+  }, [animeTitle]);
+
+  useEffect(() => {
+    fetchProducer();
+    fetchAnimeImage();
+    fetchCharacter();
+  }, [fetchProducer, fetchAnimeImage, fetchCharacter]);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-      {movieCards.map((movie) => (
-        <div
-          key={movie.id}
-          className="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg bg-base-100 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
-        >
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${movie.imageUrl})` }}
-          ></div>
-          <Link to="/MoreInfo">
-            <div className="relative z-10 p-4 flex flex-col justify-end h-full bg-gradient-to-t from-gray-900 to-transparent">
-              <h3 className="text-white text-lg font-semibold">
-                {movie.title}
-              </h3>
-              <a
-                href="#_"
-                className="mt-2 inline-block px-4 py-2 text-sm font-bold text-black bg-secondary rounded-lg transition-transform duration-300 hover:scale-110"
-              >
-                Read More
-              </a>
-            </div>
-          </Link>
-        </div>
-      ))}
+      {/* Producer Card */}
+      {producer_id && (
+        <Card
+          key={producer_id}
+          image={producerImage}
+          position={producerPosition ? `The ${producerPosition}` : "Producer"} // Default to 'Producer'
+        />
+      )}
+      {/* Character Card */}
+      {character && <Card image={character.imageUrl} position="Character" />}
+      {/* Anime Poster Card */}
+      {animeImage && <Card image={animeImage} position="Anime" />}
     </div>
   );
 };

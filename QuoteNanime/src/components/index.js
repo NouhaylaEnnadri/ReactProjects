@@ -8,8 +8,12 @@ import MoreInfo from "./MoreInfo";
 import Buttons from "./Buttons";
 import MediaCard from "./MediaCard";
 import Alert from "./Alert";
+import Card from "./Card";
+import ComingSoon from "./ComingSoon";
 
 export {
+  ComingSoon,
+  Card,
   Alert,
   MediaCard,
   Buttons,

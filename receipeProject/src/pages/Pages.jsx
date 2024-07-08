@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Category, Nav, Search } from "../Components";
+import { Category, ComingSoon, Nav, Search } from "../Components";
 import Home from "./Home";
 import Cuisine from "./Cuisine";
 import Recipe from "./Recipe";
@@ -21,7 +21,7 @@ const Pages = () => {
             <Route path="/cuisine/:type" element={<Cuisine />} />
             <Route path="/Recipe/:name" element={<Recipe />} />
             <Route path="/search/:search" element={<Searched />} />
-
+            <Route path="/comingSoon" element={<ComingSoon />} />
           </Routes>
         </div>
       </>

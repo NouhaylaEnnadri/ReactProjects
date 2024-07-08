@@ -4,6 +4,9 @@
  *
  * @param {string} anime - The title of the anime for which to fetch a quote.
  *
+ * @returns {Object} - Returns an object containing the quote and the author.
+ *                     * the author is the anime character who said the quote.
+ *
  * @throws {Error} - Throws an error if the fetch request fails or the response is not OK.
  *
  * @description
@@ -14,7 +17,6 @@
  *
  * TODO: Import the API key from the .env file for better security and flexibility.
  *
- *
  * @see [Waifu API Documentation](https://waifu.it/docs)
  */
 export const getQuote = async (anime) => {
@@ -24,7 +26,7 @@ export const getQuote = async (anime) => {
       {
         headers: {
           Authorization:
-            "MTI1ODgwNjg2ODIxODc0MDgzMA--.MTcyMDE5NDE2MA--.91567b48ff97",
+            "OTcwNzA2OTcyMDg3MzEyNDE0.MTcyMDQzNjUzNQ--.bff394bbd",
         },
       }
     );
@@ -34,9 +36,9 @@ export const getQuote = async (anime) => {
     }
 
     const data = await response.json();
-    const { quote } = data;
+    const { quote, author } = data;
 
-    return quote;
+    return { quote, author };
   } catch (err) {
     console.error("Error fetching quote:", err.message);
     throw err;

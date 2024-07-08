@@ -7,8 +7,10 @@ import Search from "./Search.jsx";
 import Category from "./Category.jsx";
 import Nav from "./Nav.jsx";
 import Alert from "./Alert.jsx";
+import ComingSoon from "./ComingSoon.jsx";
 
 export {
+  ComingSoon,
   Alert,
   Nav,
   Category,
