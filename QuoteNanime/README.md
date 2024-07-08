@@ -1,7 +1,7 @@
 <br/>
 <div align="center">
 <a href="https://github.com/nouhayla/quotenanime">
-<img src="https://source.unsplash.com/random/256x256" alt="Logo" width="80" height="80">
+<img src="./" alt="Logo" width="80" height="80">
 </a>
 <h3 align="center">QuoteNanime</h3>
 <p align="center">
@@ -43,10 +43,3 @@ This section lists major frameworks, libraries, and APIs used in this project:
 
 Follow these steps to set up the project locally:
 
-### **Prerequisites**
-
-You will need [npm](https://www.npmjs.com/) to install the dependencies.
-
-- **Install npm:**
-  ```sh
-  npm install npm@latest -g
