@@ -1,21 +1,8 @@
-# Simple React Applications
+# Beginner-Friendly React Projects
 
-<div align="center">
-  <a href="/src/assets/QuoteNanime_logo.png">
-    <img src="https://github.com/NouhaylaEnnadri/ReactProjects/blob/main/QuoteNanime/src/assets/QuoteNanime_logo.png" alt="QuoteNanime Logo" width="80" height="80">
-  </a>
-  <h3 align="center">QuoteNanime</h3>
-  <p align="center">
-    A web application to help you pick your next anime binge by generating random anime quotes and providing detailed information about the anime, characters, and director!
-    <br/><br/>
-    <img src="https://github.com/NouhaylaEnnadri/ReactProjects/blob/main/QuoteNanime/src/assets/QuoteNanime_banner.png" alt="QuoteNanime Banner">
-    <br/>
-    <a href="https://quotenanime.netlify.app/">View Live Version</a>
-  </p>
-</div>
+## **QuoteNanime**
 
-## **About QuoteNanime**
-
+### About the Project
 QuoteNanime is designed to help you choose your next anime binge. Enter the title of an anime, and the app generates a random quote, along with detailed information about the anime, its characters, and the director.
 
 ### Features
@@ -23,11 +10,17 @@ QuoteNanime is designed to help you choose your next anime binge. Enter the titl
 - **Detailed Information:** Access information about anime, characters, and directors.
 - **Future Plans:** Includes features like an anime quiz and a search engine for discovering anime.
 
-## **Built With**
+### Built With
 - [React](https://reactjs.org)
 - [Tailwind CSS](https://tailwindcss.com) and [DaisyUI](https://daisyui.com)
 - [Waifu API](https://docs.waifu.it/faq)
 - [Jikan API](https://docs.api.jikan.moe/#tag/anime/operation/getAnimePictures)
+
+### Live Version
+[View Live Version](https://quotenanime.netlify.app/)
+
+### Repository
+[View Repository](https://github.com/NouhaylaEnnadri/Simple_React_Applications/tree/main/QuoteNanime)
 
 ---
 
@@ -41,6 +34,12 @@ The Recipe App allows users to search for recipes using an API. Users can explor
 - [Tailwind CSS](https://tailwindcss.com)
 - [Recipe API](https://www.themealdb.com/api.php)
 
+### Live Version
+[View Live Version](https://noylisdelicious.netlify.app/)
+
+### Repository
+[View Repository](https://github.com/NouhaylaEnnadri/ReactProjects/tree/main/RecipeApp)
+
 ---
 
 ## **To-Do App**
@@ -51,5 +50,28 @@ The To-Do App helps users manage their tasks efficiently. You can add, delete, a
 ### Built With
 - [React](https://reactjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
+
+### Live Version
+[View Live Version](https://noyldo.netlify.app/)
+
+### Repository
+[View Repository](https://github.com/NouhaylaEnnadri/Simple_React_Applications/tree/main/TodoApp)
+
+---
+
+## **Project Portfolio**
+
+### About the Project
+The Project Portfolio showcases a collection of projects, highlighting skills and experience. Users can navigate through various projects, each demonstrating different technologies and functionalities.
+
+### Built With
+- [React](https://reactjs.org)
+- [Tailwind CSS](https://tailwindcss.com)
+
+### Live Version
+[View Live Version](https://noylreactprojects.netlify.app/)
+
+### Repository
+[View Repository](https://github.com/NouhaylaEnnadri/Simple_React_Applications/tree/main/reactProjetcts)
 
 ---
