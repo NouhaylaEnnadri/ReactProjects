@@ -12,7 +12,7 @@ A web application to help you pick your next anime binge by generating random an
 <br/>
 <img src="https://github.com/NouhaylaEnnadri/ReactProjects/blob/main/QuoteNanime/src/assets/QuoteNanime_banner.png" alt="banner" >
 
-<a href="https://noylread.netlify.app/">View Live Version</a>  
+<a href="https://quotenanime.netlify.app/">View Live Version</a>  
 
 </p>
 </div>
