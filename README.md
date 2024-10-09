@@ -32,7 +32,7 @@ The Recipe App allows users to search for recipes using an API. Users can explor
 ### Built With
 - [React](https://reactjs.org)
 - [Tailwind CSS](https://tailwindcss.com)
-- [Recipe API](https://www.themealdb.com/api.php)
+- [Spoonacular API](https://spoonacular.com/food-api)
 
 ### Live Version
 [View Live Version](https://noylisdelicious.netlify.app/)
